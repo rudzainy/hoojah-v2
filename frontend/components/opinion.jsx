@@ -5,7 +5,7 @@ import OpinionStore from '../stores/opinion-store.react';
 export default class Opinion extends React.Component {
   static get propTypes() {
     return {
-         id: React.PropTypes.string.isRequired,
+         id: React.PropTypes.number.isRequired,
        text: React.PropTypes.string.isRequired,
       side1: React.PropTypes.string.isRequired,
       side2: React.PropTypes.string.isRequired
@@ -51,7 +51,8 @@ export default class Opinion extends React.Component {
     };
 
     return (
-      <li id={this.state.id} className={classNames(classes)}>
+      <li key={this.state.id} className={classNames(classes)}
+          onClick={this.handleClickEvent}>
         {this.state.text}
       </li>
     )

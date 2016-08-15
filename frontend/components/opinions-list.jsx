@@ -34,6 +34,7 @@ export default class OpinionsList extends React.Component {
         <div className='opinionList'>
           { this.state.collection.map((data) => (
             <Opinion id={data.id}
+                    key={data.id}
                    text={data.text}
                   side1={data.side1}
                   side2={data.side2}
