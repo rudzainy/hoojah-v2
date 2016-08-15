@@ -2,6 +2,7 @@ import React from 'react';
 import _ from 'lodash';
 import OpinionActions from '../actions/opinion-actions.react';
 import OpinionStore from '../stores/opinion-store.react';
+import Opinion from './opinion';
 
 export default class OpinionsList extends React.Component {
   constructor(props) {
