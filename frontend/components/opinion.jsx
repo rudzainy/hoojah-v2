@@ -23,11 +23,12 @@ export default class Opinion extends React.Component {
     };
 
     this.onChange = this.onChange.bind(this);
+    this.handleClickEvent = this.handleClickEvent.bind(this);
   }
 
   onChange() {
     this.setState({
-      selected: this.state.id === OpinionStore.getSelectedOpinionId()
+      isSelected: this.state.id === OpinionStore.getSelectedOpinionId()
     });
   }
 
@@ -37,6 +38,10 @@ export default class Opinion extends React.Component {
 
   componentWillUnmount() {
       OpinionStore.removeChangeListener(this.onChange);
+  }
+
+  handleClickEvent(e) {
+    OpinionStore.setSelectedOpinionId(this.state.id);
   }
 
   render() {
